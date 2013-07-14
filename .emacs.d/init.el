@@ -75,3 +75,8 @@
 (require 'jade-mode)    
 (add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
+
+;; ---------------------------
+;; -- Auto-complete for parentheses and brackets --
+;; ---------------------------
+(electric-pair-mode 1)
