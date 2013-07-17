@@ -84,4 +84,12 @@
     Otherwise, just insert the typed character."
       (interactive)
       (if (eolp) (let (parens-require-spaces) (insert-pair)) (self-insert-command 1)))
+      
+      (add-hook 'python-mode-hook
+              (lambda ()
+                (define-key python-mode-map "\"" 'electric-pair)
+                (define-key python-mode-map "\'" 'electric-pair)
+                (define-key python-mode-map "(" 'electric-pair)
+                (define-key python-mode-map "[" 'electric-pair)
+                (define-key python-mode-map "{" 'electric-pair)))
 (electric-pair-mode 1)
